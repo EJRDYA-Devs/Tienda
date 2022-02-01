@@ -24,9 +24,9 @@
                     <thead>
                         <tr>
                             <th class="px-4 py-2 text-center ">
-                                <a class="text-primary" wire:click.prevent="sortBy('names')" role="button" href="#">
+                                <a class="text-primary" wire:click.prevent="sortBy('nombre')" role="button" href="#">
                                     Nombres
-                                    @include('includes._sort-icon', ['field' => 'names'])
+                                    @include('includes._sort-icon', ['field' => 'nombre'])
                                 </a>
                             </th>
                             <th class="px-4 py-2 text-center ">
@@ -36,9 +36,10 @@
                                 </a>
                             </th>
                             <th class="px-4 py-2 text-center ">
-                                <a class="text-primary" wire:click.prevent="sortBy('status')" role="button" href="#">
+                                <a class="text-primary" wire:click.prevent="sortBy('verificado')" role="button"
+                                    href="#">
                                     Verificado
-                                    @include('includes._sort-icon', ['field' => 'status'])
+                                    @include('includes._sort-icon', ['field' => 'verificado'])
                                 </a>
                             </th>
                             <th class="px-4 py-2 text-center" colspan="2">Acción</th>

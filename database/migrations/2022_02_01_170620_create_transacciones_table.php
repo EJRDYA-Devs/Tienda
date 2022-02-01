@@ -15,6 +15,17 @@ class CreateTransaccionesTable extends Migration
     {
         Schema::create('transacciones', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('cantidad');
+            $table->unsignedBigInteger('id_producto');
+            $table->foreign('id_producto')
+                ->references('id')
+                ->on('productos')
+                ->onDelete('cascade');
+            $table->unsignedBigInteger('id_comprador');
+            $table->foreign('id_comprador')
+                ->references('id')
+                ->on('usuarios')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

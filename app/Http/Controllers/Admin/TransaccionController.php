@@ -3,17 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Transaccion;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class TransaccionController extends Controller
 {
     /**
-     * Mostrar inicio del sistema
+     * Mostrar listado de transacciones
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('admin.index');
+        return view('admin.transacciones.index');
     }
 }

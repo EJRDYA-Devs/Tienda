@@ -2649,3 +2649,47 @@
 .p-10 {
     padding: 10px
 }
+.table-sortable>thead>tr>th {
+    cursor: pointer;
+    position: relative;
+}
+
+.table-sortable>thead>tr>th>i.sort,
+.table-sortable>thead>tr>th>i.sort,
+.table-sortable>thead>tr>th>i.sort {
+    content: ' ';
+    position: absolute;
+    height: 0;
+    width: 0;
+    right: 20px;
+    bottom: 23px;
+}
+
+/* .table-sortable>thead>tr>th.sort {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ccc;
+    border-bottom: 0px solid transparent;
+}
+
+.table-sortable>thead>tr>th:hover.sort {
+    border-top: 5px solid #888;
+}
+
+.table-sortable>thead>tr>th.asc.sort {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 0px solid transparent;
+    border-bottom: 5px solid #333;
+}
+
+.table-sortable>thead>tr>th.asc:hover.sort {
+    border-bottom: 5px solid #888;
+}
+
+.table-sortable>thead>tr>th.desc.sort {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333;
+    border-bottom: 5px solid transparent;
+} */

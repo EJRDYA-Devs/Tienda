@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Transaccion;
-use App\Http\Requests\StoreTransaccionRequest;
-use App\Http\Requests\UpdateTransaccionRequest;
+use App\Http\Controllers\Controller;
+use App\Models\Producto;
+use Illuminate\Http\Request;
 
-class TransaccionController extends Controller
+class ProductoController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Mostrar listado de productos
      *
      * @return \Illuminate\Http\Response
      */
@@ -31,10 +31,10 @@ class TransaccionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreTransaccionRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTransaccionRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class TransaccionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Transaccion  $transaccion
+     * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function show(Transaccion $transaccion)
+    public function show(Producto $producto)
     {
         //
     }
@@ -53,10 +53,10 @@ class TransaccionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Transaccion  $transaccion
+     * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Transaccion $transaccion)
+    public function edit(Producto $producto)
     {
         //
     }
@@ -64,11 +64,11 @@ class TransaccionController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateTransaccionRequest  $request
-     * @param  \App\Models\Transaccion  $transaccion
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTransaccionRequest $request, Transaccion $transaccion)
+    public function update(Request $request, Producto $producto)
     {
         //
     }
@@ -76,10 +76,10 @@ class TransaccionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Transaccion  $transaccion
+     * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Transaccion $transaccion)
+    public function destroy(Producto $producto)
     {
         //
     }

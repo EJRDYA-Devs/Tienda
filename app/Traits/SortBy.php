@@ -14,4 +14,8 @@ trait SortBy
         }
         $this->orderBy = $field;
     }
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
 }

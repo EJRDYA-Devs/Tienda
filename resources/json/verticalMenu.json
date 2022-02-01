@@ -27,6 +27,32 @@
                     "can": "usuarios"
                 }
             ]
+        },
+        {
+            "url": "inventario",
+            "name": "Inventario",
+            "icon": "box",
+            "can": "inventario",
+            "submenu": [
+                {
+                    "route": "admin.productos.index",
+                    "url": "admin/productos",
+                    "name": "Lista de Productos ",
+                    "can": "productos"
+                },
+                {
+                    "route": "admin.categorias.index",
+                    "url": "admin/categorias",
+                    "name": "Lista de Categoria",
+                    "can": "categoria"
+                },
+                {
+                    "route": "admin.transacciones.index",
+                    "url": "admin/transacciones",
+                    "name": "Lista de Transacciones",
+                    "can": "transacciones"
+                }
+            ]
         }
     ]
 }

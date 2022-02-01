@@ -79,11 +79,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="dropdown-item">
-                            <a href="{{ route('admin.perfil.me') }}">
-                                <i data-feather="user"></i> <span>Mi Perfil</span>
-                            </a>
-                        </div>
+
                         <div class="dropdown-item">
                             <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -161,7 +157,6 @@
         @endif
     </script>
     @yield('js')
-    {{-- <x-permissions::scripts /> --}}
 </body>
 
 </html>

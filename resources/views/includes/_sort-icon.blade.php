@@ -1,7 +1,7 @@
 @if ($orderBy !== $field)
-    <i class="text-muted fas fa-sort"></i>
+    <i class="sort text-muted fas fa-sort"></i>
 @elseif ($orderAsc)
-    <i class="fas fa-sort-up"></i>
+    <i class="sort fas fa-sort-up"></i>
 @else
-    <i class="fas fa-sort-down"></i>
+    <i class="sort fas fa-sort-down"></i>
 @endif
