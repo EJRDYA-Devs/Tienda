@@ -2,11 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
+use App\Models\Categoria;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ProductoFactory extends Factory
+class CategoriaFactory extends Factory
 {
+    protected $model = Categoria::class;
     /**
      * Define the model's default state.
      *
@@ -14,14 +15,8 @@ class ProductoFactory extends Factory
      */
     public function definition()
     {
-        $user = User::inRandomOrder()
-            ->first();
         return [
-            'nombre' => $this->faker->word,
             'descripcion' => $this->faker->text,
-            'cantidad' => 100,
-            'estado' => true,
-            'id_vendedor' =>  $user->id,
         ];
     }
 }
