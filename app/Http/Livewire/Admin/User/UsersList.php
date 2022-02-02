@@ -87,6 +87,12 @@ class UsersList extends Component
      * @var string
      */
     public  $email;
+    /**
+     * Renderizar el componete con las listas de usuarios
+     *
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function render()
     {
         $users = User::whereNotIn('id', [1])
@@ -95,6 +101,11 @@ class UsersList extends Component
             ->paginate($this->perPage);
         return view('livewire.admin.user.users-list', compact('users'));
     }
+    /**
+     * Funcion para crear un usuario nuevo
+     *
+     * @return void
+     */
     public function createUser()
     {
         $this->validate([
@@ -124,6 +135,12 @@ class UsersList extends Component
             ]
         );
     }
+    /**
+     * Funcion para obtener los datos de un usuario para su edicion
+     *
+     * @param User $user
+     * @return void
+     */
     public function editUser(User $user)
     {
         $this->user_id  = $user->id;
@@ -132,6 +149,11 @@ class UsersList extends Component
         $this->verificado   = $user->verificado;
         $this->editMode = true;
     }
+    /**
+     * Funcion para actualizar un usuario.
+     *
+     * @return void
+     */
     public function updateUser()
     {
         $this->validate([
@@ -157,6 +179,12 @@ class UsersList extends Component
             ]
         );
     }
+    /**
+     * Funcion para eliminar un usuario.
+     *
+     * @param User $user
+     * @return void
+     */
     public function deleteUser(User $user)
     {
         $user->delete();
@@ -168,6 +196,11 @@ class UsersList extends Component
             ]
         );
     }
+    /**
+     * Funcion para restablecer los inputs del modal
+     *
+     * @return void
+     */
     public function resetInput()
     {
         $this->reset([

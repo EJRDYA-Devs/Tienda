@@ -148,8 +148,8 @@ class ListaTransacciones extends Component
         DB::beginTransaction();
         try {
             $producto = Producto::find($this->producto_id);
-            if ($producto->cantidad < $this->cantidad) {
-                $this->addError('cantidad', 'La cantidad es superior al stock del producto.');
+            if ($this->cantidad > $producto->cantidad) {
+                return $this->addError('cantidad', 'La cantidad es superior al stock del producto.');
             }
             $transaccion = Transaccion::create([
                 'cantidad' => $this->cantidad,

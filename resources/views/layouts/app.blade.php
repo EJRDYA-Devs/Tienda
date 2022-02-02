@@ -22,7 +22,6 @@
     <link href="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css" rel="stylesheet"
         type="text/css" />
     @yield('css')
-
     <style>
         body {
             font-family: 'Sansita', sans-serif;
@@ -37,9 +36,7 @@
         }
 
     </style>
-
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
-
 </head>
 
 <body class="sidebar-noneoverflow starterkit">
@@ -49,10 +46,7 @@
         <header class="header navbar navbar-expand-sm">
             <ul class="navbar-item flex-row">
                 <li class="nav-item theme-logo">
-                    {{-- <a href="index.html">
-                        <img src="{{ asset('img/favicon.png') }}" class="navbar-logo" alt="logo">
-                    </a> --}}
-                    CORK-ADMIN
+                    TONYSTORE
                 </li>
             </ul>
             <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><i data-feather="menu"></i></a>
@@ -69,11 +63,6 @@
                         aria-labelledby="userProfileDropdown">
                         <div class="user-profile-section">
                             <div class="media mx-auto">
-                                {{-- @if (Auth::user()->avatar)
-                                    <img src="{{ Auth::user()->avatar }}" class="img-fluid mr-2" alt="avatar">
-                                @else
-                                    <img alt="image" src="{{ Avatar::create(Auth::user()->names)->setChars(2) }}">
-                                @endif --}}
                                 <div class="media-body">
                                     <h5> {{ Auth::user()->nombre }}</h5>
                                 </div>

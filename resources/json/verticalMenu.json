@@ -41,12 +41,6 @@
                     "can": "productos"
                 },
                 {
-                    "route": "admin.categorias.index",
-                    "url": "admin/categorias",
-                    "name": "Lista de Categoria",
-                    "can": "categoria"
-                },
-                {
                     "route": "admin.transacciones.index",
                     "url": "admin/transacciones",
                     "name": "Lista de Transacciones",
