@@ -18,6 +18,7 @@ class CreateCategoriasTable extends Migration
             $table->string('nombre', 100);
             $table->string('descripcion', 200);
             $table->timestamps();
+            $table->softDeletes();
         });
         Schema::create('categoria_producto', function (Blueprint $table) {
             $table->id();
@@ -32,6 +33,7 @@ class CreateCategoriasTable extends Migration
                 ->on('productos')
                 ->onDelete('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -24,6 +24,7 @@ class CreateUsuariosTable extends Migration
             $table->boolean('verificacion_token')->nullable();
             $table->boolean('admin');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
