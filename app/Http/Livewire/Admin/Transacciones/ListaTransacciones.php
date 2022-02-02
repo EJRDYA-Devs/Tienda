@@ -10,6 +10,9 @@ use App\Models\Transaccion;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\Admin\TransaccionExport;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class ListaTransacciones extends Component
 {
@@ -173,5 +176,24 @@ class ListaTransacciones extends Component
 
             );
         }
+    }
+    /**
+     * Generar reporte de Excel de las transacciones realizadas..
+     *
+     * @return \Maatwebsite\Excel\Facades\Excel
+     */
+    public function generarExcel()
+    {
+        $transacciones = Transaccion::join('productos', 'transacciones.id_producto', '=', 'productos.id')
+            ->join('usuarios', 'transacciones.id_comprador', '=', 'usuarios.id')
+            ->where(function ($query) {
+                $query->where('transacciones.cantidad', 'like', '%' . $this->search . '%')
+                    ->orWhere('productos.nombre', 'like', '%' . $this->search . '%')
+                    ->orWhere('usuarios.nombre', 'like', '%' . $this->search . '%');
+            })
+            ->select('transacciones.*', 'usuarios.nombre as comprador', 'productos.nombre as producto')
+            ->orderBy($this->orderBy, $this->orderAsc ? 'asc' : 'desc')
+            ->get();
+        return Excel::download(new TransaccionExport($transacciones), 'transacciones-' . now() . '.xlsx');
     }
 }

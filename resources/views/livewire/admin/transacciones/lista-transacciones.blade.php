@@ -1,8 +1,11 @@
 <div>
-    <button type="button" class="btn btn-outline-success mb-2" wire:click.prevent="GenerarExcelSolicitud()">
+    <button type="button" class="btn btn-outline-success mb-2" wire:click.prevent="generarExcel()"
+        wire:target="generarExcel" wire:loading.attr="disabled">
         <i class="fa fa-file-excel"></i> Generar Reporte
     </button>
+
     <div class="card">
+
         <div class="card-body">
             <div class="form-row">
                 <div class="form-group col-lg-4">

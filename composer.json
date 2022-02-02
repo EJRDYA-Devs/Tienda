@@ -17,6 +17,7 @@
         "laravel/ui": "^3.4",
         "laravolt/avatar": "^4.1",
         "livewire/livewire": "^2.6",
+        "maatwebsite/excel": "^3.1",
         "tonystore/livewire-notification": "^1.0"
     },
     "require-dev": {
