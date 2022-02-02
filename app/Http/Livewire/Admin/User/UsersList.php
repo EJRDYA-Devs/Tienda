@@ -12,28 +12,85 @@ use Illuminate\Support\Facades\Hash;
 class UsersList extends Component
 {
     use WithPagination, SortBy;
+    /**
+     * Elegir el tipo de paginación
+     *
+     * @var string
+     */
     protected $paginationTheme = 'bootstrap';
-    protected $listeners       = ['deleteUser'];
+    /**
+     * Variable para escuchar eventos.
+     *
+     * @var array
+     */
+    protected $listeners  = ['deleteUser'];
+    /**
+     * Parametros en la url
+     *
+     * @var array
+     */
     protected $queryString     = [
         'search' => ['except' => ''],
         'page',
     ];
+    /**
+     * Cantidad de registros por paginas a mostrar.
+     *
+     * @var integer
+     */
     public $perPage        = 10;
+    /**
+     * Buscar entre los registros de las transacciones
+     *
+     * @var string
+     */
     public $search         = '';
+    /**
+     * Ordenar los registros segun la columna.
+     *
+     * @var string
+     */
     public $orderBy        = 'id';
+    /**
+     * Ordenar de manera ascendente o descendente
+     *
+     * @var boolean
+     */
     public $orderAsc       = true;
+    /**
+     *Estado del usuario
+     *
+     * @var boolean
+     */
     public $verificado         = 1;
+    /**
+     * Id del usuario que se utiliza al editar
+     *
+     * @var string
+     */
     public $user_id        = '';
-    public $rol        = '';
-    public $findrole        = '';
-    public $roles        = [];
+    /**
+     * Modo de edicion
+     *
+     * @var boolean
+     */
     public $editMode       = false;
-    public $creatingMode   = false;
-    // VARIABLES DE USUARIO
-    public $nombre, $email, $username;
+    /**
+     * Nombre del usuario
+     *
+     * @var string
+     */
+    public $nombre;
+    /**
+     * Email del usuario
+     *
+     * @var string
+     */
+    public  $email;
     public function render()
     {
-        $users = User::search($this->search)
+        $users = User::whereNotIn('id', [1])
+            ->search($this->search)
             ->orderBy($this->orderBy, $this->orderAsc ? 'asc' : 'desc')
             ->paginate($this->perPage);
         return view('livewire.admin.user.users-list', compact('users'));
@@ -53,9 +110,9 @@ class UsersList extends Component
         $clave              = 12345678; //LOCAL
         $user               = new User;
         $user->nombre      = $this->nombre;
-        $user->username     = $this->username;
         $user->email        = $this->email;
-        $user->verificado       = $this->verificado == 'activo' ? 'activo' : 'inactivo';
+        $user->verificado       = $this->verificado;
+        $user->admin       = 0;
         $user->password     = Hash::make($clave);
         $user->save();
         $this->resetInput();
@@ -114,7 +171,7 @@ class UsersList extends Component
     public function resetInput()
     {
         $this->reset([
-            'nombre', 'username', 'email', 'verificado', 'editMode'
+            'nombre', 'email', 'verificado', 'editMode'
         ]);
     }
 }

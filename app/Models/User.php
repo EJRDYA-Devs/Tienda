@@ -27,6 +27,8 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'admin',
+        'verificado',
         'password',
     ];
 
@@ -50,7 +52,10 @@ class User extends Authenticatable
     ];
     public function scopeSearch($query, $search)
     {
-        return $query->where(fn ($q) => $q->where('nombre', 'like', '%' . $search . '%')
-            ->orWhere('email', 'like', '%' . $search . '%'));
+        return $query->where(
+            fn ($q) =>
+            $q->where('nombre', 'like', '%' . $search . '%')
+                ->orWhere('email', 'like', '%' . $search . '%')
+        );
     }
 }

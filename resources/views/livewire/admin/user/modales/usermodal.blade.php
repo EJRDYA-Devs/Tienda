@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="selectgroup selectgroup-pills">
-                    <span class="font-weight-bold text-dark"> Estado:</span>
+                    <span class="font-weight-bold text-dark"> Verificado:</span>
                     <label class="selectgroup-item">
                         <input type="radio" wire:model="verificado" name="verificado" value="1"
                             class="selectgroup-input">
@@ -48,7 +48,7 @@
                         <span class="selectgroup-button selectgroup-button-icon"><i
                                 class="fas fa-toggle-off"></i></span>
                     </label>
-                    <span class="badge @if ($verificado == 'activo') badge-success @else badge-danger @endif">{{ $verificado }}</span>
+                    <span class="badge @if ($verificado) badge-success @else badge-danger @endif">{{ $verificado }}</span>
                 </div>
             </div>
             <div class="modal-footer br">
