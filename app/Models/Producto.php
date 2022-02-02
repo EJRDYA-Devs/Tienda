@@ -26,4 +26,8 @@ class Producto extends Model
         return $this->belongsToMany(Categoria::class, 'categoria_producto', 'id_producto', 'id_categoria')
             ->withTimestamps();
     }
+    public function transacciones()
+    {
+        return $this->hasMany('App\Models\Transaccion', 'id_producto');
+    }
 }
