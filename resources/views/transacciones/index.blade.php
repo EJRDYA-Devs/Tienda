@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-<div class="container w-25 border p-4 mt-5">
+<div class="container w-50 border p-4 mt-5">
     <form action="{{ route('transacciones' ) }}" method="POST">
         @csrf
         @if (session('success'))
@@ -31,9 +31,39 @@
             @endforeach
         </select>
 
-        <button type="submit" class="btn btn-primary">Comprar!</button>
+        <button type="submit" class="btn btn-success mt-2 mb-2">Comprar!</button>
 
     </form>
+
+    <div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Comprador</th>
+                    <th scope="col">Producto</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($transacciones as $trans)
+                <tr>
+                    <th>
+                        {{$trans->cantidad}}
+                    </th>
+                    <th>
+                        {{$trans->comprador}}
+                    </th>
+                    <th>
+                        {{$trans->nombre}}
+                    </th>
+                </tr>
+
+                @endforeach
+
+            </tbody>
+        </table>
+
+    </div>
 
 </div>
 

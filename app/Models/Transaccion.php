@@ -14,4 +14,9 @@ class Transaccion extends Model
         'comprador_id',
         'estado'
     ];
+
+    public function producto()
+    {
+        return $this->hasOne('Productos');
+    }
 }

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Productos;
 use App\Models\Transaccion;
 use App\Models\Usuarios;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class TransaccionController extends Controller
@@ -19,7 +20,10 @@ class TransaccionController extends Controller
     {
         $clientes = Usuarios::all();
         $productos = Productos::all();
-        return view('transacciones.index', ['clientes' => $clientes, 'productos' => $productos]);
+        $transacciones = DB::table('transaccions')->join('productos', 'transaccions.producto_id', '=', 'productos.id')
+            ->join('usuarios', 'transaccions.comprador_id', '=', 'usuarios.id')
+            ->get(['usuarios.nombre as comprador','productos.*']);
+        return view('transacciones.index', ['clientes' => $clientes, 'productos' => $productos, 'transacciones' => $transacciones]);
     }
 
     /**
