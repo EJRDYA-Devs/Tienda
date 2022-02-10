@@ -1,22 +1,21 @@
-# Tienda
-Repositorio para pruebas a aspirantes al área de Desarrollo de EJR
-1. #### Crear una copia del repositorio (url del repo) de manera local y trabaje en ella.
-2. #### Cree la base de datos y tablas utilizando el framework de su elección. Tomar en cuenta la relación de las entidades.
-3. #### Ingresar datos de prueba a la BD mediante un script:
-  * Productos (mínimo 10).
-  > Valor por defecto en cantidad 100 (stock de productos).
-  * Categoría (mínimo 5).
-  * Categoria_Producto.
-  * Realizar commit con el script. 
-4. #### CRUD de las siguientes entidades: 
->##### TRANSACCIONES
-> **Validaciones:**
->  * Cantidad, comprador y producto son campos obligatorios.
-> * La cantidad ingresada no puede sobrepasar a la cantidad de Productos en stock.
-> * Actualizar stock de productos por cada Transacción.
-> * No se puede realizar un registro cuando no exista stock del Productos.
-5. #### Reporte.
-  * Generar un reporte de las Transacciones realizadas.
-  * Generar un reporte con stock actualizado de Productos posterior a las Transacciones.
-6. ### Generar un Pull Request (PR) con los cambios realizados en tu repositorio. Incluir en el comentario del PR Nombre y breve descripción de lo realizado. 
+# Tienda virtual
+### Proyecto de evaluación
 
+A continuación adjunto capturas de las pantallas del sitio web Tienda
+
+He utilizado una base de datos en Postgrsql con los siguientes accesos
+1. **port   : 8009**
+2. **Host   : localhost**
+3. **Database   : TIENDA_ROMERO_ASOC**
+4. **Username   :postgres**
+5. **Password   :secret**
+
+
+![captura-valida-cantidad-disponible](https://user-images.githubusercontent.com/8096392/152657671-cb12ea95-fa0a-40fc-9a41-d78520957f0b.png)
+
+![cantidad-requerida](https://user-images.githubusercontent.com/8096392/152657708-493195e2-f479-4eef-b717-67db0763da79.png)
+
+![reporte](https://user-images.githubusercontent.com/8096392/152660506-a27a5557-b87b-4919-9160-af384d19220d.png)
+
+
+Saludos,
