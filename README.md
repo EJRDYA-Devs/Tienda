@@ -20,4 +20,3 @@ Repositorio para pruebas a aspirantes al área de Desarrollo de EJR
   * Generar un reporte de las Transacciones realizadas.
   * Generar un reporte con stock actualizado de Productos posterior a las Transacciones.
 7. ### Generar un Pull Request (PR) con los cambios realizados en tu repositorio. Incluir en el comentario del PR Nombre y breve descripción de lo realizado. 
-
