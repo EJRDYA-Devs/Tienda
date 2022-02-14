@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TransaccionController;
+use App\Http\Controllers\ReporteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/app', [TransaccionController::class, 'index'])->name('transacciones');
-Route::post('/app', [TransaccionController::class, 'store'])->name('transacciones');
+Route::get('/transacciones', [TransaccionController::class, 'index'])->name('transacciones');
+Route::get('/transacciones/reporte', [ReporteController::class, 'index']);
+
+Route::post('/transacciones', [TransaccionController::class, 'store'])->name('transacciones');

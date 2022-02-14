@@ -35,6 +35,10 @@ class TransaccionController extends Controller
         $request->validate(['cliente_id' => 'required']);
         $request->validate(['producto_id' => 'required']);
 
+        if($request->cantidad <= 0){
+            return Redirect::back()->withErrors(['msg' => 'La cantidad es inválida.']);
+        }
+
         $transaccion = new Transaccion;
 
         $transaccion->cantidad = $request->cantidad;

@@ -39,7 +39,10 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Transacciones</a>
+                        <a class="nav-link active" href="{{ url('/transacciones') }}">Transacciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/transacciones/reporte') }}">Reporte</a>
                     </li>
                 </ul>
             </div>

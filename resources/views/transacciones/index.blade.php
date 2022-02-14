@@ -14,18 +14,21 @@
         @enderror
 
         <div class="mb-3">
-            <label for="cantidad" class="form-label">Cantidad</label>
-            <input type="text" class="form-control" autocomplete="off" name="cantidad" id="cantidad">
+            <label for="cantidad" class="form-label">* Cantidad</label>
+            <input type="number" class="form-control" autocomplete="off" name="cantidad" id="cantidad">
         </div>
-        <label for="cliente_id" class="form-label">Cliente</label>
+        <label for="cliente_id" class="form-label">* Cliente</label>
         <select name="cliente_id" class="form-select">
+            <option value=""></option>
             @foreach ($clientes as $clie)
             <option value="{{$clie->id}}">{{$clie->nombre}}</option>
             @endforeach
         </select>
 
-        <label for="producto_id" class="form-label">Producto</label>
+        <br>
+        <label for="producto_id" class="form-label">* Producto</label>
         <select name="producto_id" class="form-select">
+            <option value=""></option>
             @foreach ($productos as $prod)
             <option value="{{$prod->id}}">{{$prod->nombre}}</option>
             @endforeach
