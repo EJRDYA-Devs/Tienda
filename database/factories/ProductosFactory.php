@@ -16,7 +16,7 @@ class ProductosFactory extends Factory
         return [
             'nombre' => $this->faker->name(),
             'descripcion' => $this->faker->text(),
-            'cantidad' => 50,
+            'cantidad' => 100,
             'vendedor_id' => 1,
             'estado' => true,
         ];
