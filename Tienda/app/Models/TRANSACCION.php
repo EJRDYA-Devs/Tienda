@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class TRANSACCION extends Model
-{protected $guarded = [];
+{
+    
     protected $table= "TRANSACCIONES";
-    use HasFactory;
+    protected $fillable =['cantidad','id_producto','id_comprador'];
+      use HasFactory;
 }

@@ -22,6 +22,7 @@ return new class extends Migration
     
             $table->integer('ID_PRODUCTO')->unsigned();
             $table->foreign('ID_PRODUCTO')->references('id')->on('productos');
+            $table->timestamps();
         });
     }
 

@@ -18,7 +18,7 @@ return new class extends Migration
         $table->foreign('ID_CATEGORIA')->references('ID')->on('categorias');
 
 		$table->integer('ID_PRODUCTO')->unsigned();
-        $table->foreign('ID_PRODUCTO')->references('id')->on('productos');
+        $table->foreign('ID_PRODUCTO')->references('ID')->on('productos');
             $table->timestamps();
         });
     }

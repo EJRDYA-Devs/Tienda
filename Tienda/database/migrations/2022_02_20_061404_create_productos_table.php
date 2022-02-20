@@ -18,6 +18,7 @@ return new class extends Migration
 		$table->string('NOMBRE',100);
 		$table->string('DESCRIPCION',200);
 		$table->integer('CANTIDAD');
+        $table->boolean('ESTADO');
 		$table->integer('ID_VENDEDOR')->unsigned()->nullable();
         $table->foreign('ID_VENDEDOR')->references('ID')->on('usuarios');
 		$table->timestamps();
