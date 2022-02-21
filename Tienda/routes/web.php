@@ -24,7 +24,10 @@ Route::get('/ReporteTransacciones','App\Http\Controllers\TransaccionesController
 
 
 //llama formulario  en Controller para Ingresar Transaccion
-Route::get('/newTransaccion/create','App\Http\Controllers\TransaccionesController@create');
+Route::get('/newTransaccion/create','App\Http\Controllers\TransaccionesController@create',function()  
+{  
+    //  
+}) -> name('Create_transaccion');
 
 //LLama metodo post en TransaccionesController
 Route::post('/newTransaccion','App\Http\Controllers\TransaccionesController@store'); 

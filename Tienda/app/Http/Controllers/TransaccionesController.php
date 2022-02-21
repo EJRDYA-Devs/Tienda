@@ -52,9 +52,13 @@ class TransaccionesController extends Controller
         $transaccion->cantidad = $NuevaCantidad;
         $transaccion->id_producto = $request->input('id_producto');
         $transaccion->id_comprador = $request->input('id_comprador');
-        $transaccion->save();
+        
 
         $this->updateProduct($transaccion);
+
+        $transaccion->save();
+        return redirect()->route('Create_transaccion');
+        
     }
 
     //Funcion que actualiza stock de inventario cuando una transaccion es añadida
@@ -62,8 +66,8 @@ class TransaccionesController extends Controller
     {
 
         $producto = PRODUCTO::findOrFail($request->id_producto);
-        $producto->CANTIDAD = $request->cantidad;
-        $producto->ID_VENDEDOR = $request->id_comprador;
+        $producto->cantidad = $request->cantidad;
+        $producto->id_vendedor = $request->id_comprador;
         $producto->save();
     }
 
@@ -82,6 +86,7 @@ class TransaccionesController extends Controller
         $producto->CANTIDAD = $transaccion->CANTIDAD + $producto->CANTIDAD;
         $producto->ID_VENDEDOR = $transaccion->ID_COMPRADOR;
         $producto->save();
+        
     }
 
     //elimina una transaccion con el parametro id de la Transaccion
