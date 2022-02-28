@@ -1,6 +1,7 @@
 <div class="box box-info padding-1">
     <div class="box-body">
         
+    <!-- Formulario Producto -->
         <div class="form-group">
             {{ Form::label('NOMBRE') }}
             {{ Form::text('NOMBRE', $producto->NOMBRE, ['class' => 'form-control' . ($errors->has('NOMBRE') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}

@@ -5,6 +5,8 @@
 @endsection
 
 @section('content')
+
+<!-- Crear Producto -->
     <section class="content container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -13,7 +15,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Producto</span>
+                        <span class="card-title">Crear Producto</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('productos.store') }}"  role="form" enctype="multipart/form-data">
