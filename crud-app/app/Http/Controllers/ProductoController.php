@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 
+//Controlador de Producto
+
 /**
  * Class ProductoController
  * @package App\Http\Controllers

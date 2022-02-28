@@ -1,5 +1,7 @@
 <?php
 
+
+//Controlador de Categorias
 namespace App\Http\Controllers;
 
 use App\Models\Categoria;

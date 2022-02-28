@@ -18,9 +18,9 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+//Route para productos
 Route::resource('productos', App\Http\Controllers\ProductoController::class);
-
+//Route para Categoria
 Route::resource('categoria', App\Http\Controllers\CategoriaController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
