@@ -1,0 +1,14 @@
+El crud esta con un extra de logeo que me eh acostumbrado a hacer
+
+el usuario que tiene todos los productos es 
+
+user:carlosdavid_vallejo@hotmail.com
+contraseña:123456789
+
+al ingresear a visual code  ir al proyecyo crud-app con el comando cd crud-app
+
+se puede subir directamente a xampp
+
+pero para mayor facilidad ejecutar el comando php artisan serve para levantar el servidor de desarrollo
+
+Ajunto tambien el script de la base de datos con los datos requeridos
